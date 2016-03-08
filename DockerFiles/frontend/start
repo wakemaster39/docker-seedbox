@@ -20,4 +20,9 @@ if $USE_SSL ; then
     fi
 fi
 
-nginx -g "daemon off;"
+#nginx -g "daemon off;"
+while [ "true" ]
+do
+  echo "lol"
+  sleep 2
+done
