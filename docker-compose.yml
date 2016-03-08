@@ -39,3 +39,15 @@ services:
         volumes:
             - config:/config
             - torrents:/torrents
+    public_rtorrent:
+        image: wakemaster39/seedbox:private_rtorrent
+        restart: always
+        networks:
+            - main
+        ports:
+            - "49161:49161"
+            - "49161:49161/udp"
+            - "6881:6881/udp"
+        volumes:
+            - config:/config
+            - torrents:/torrents
