@@ -13,7 +13,7 @@ volumes:
 
 services:
       rtorrent:
-        image: wakemaster/seedbox:rtorrent
+        image: wakemaster39/seedbox:rtorrent
         restart: always
         networks:
             - main
@@ -24,3 +24,16 @@ services:
         volumes:
             - config:/config
             - torrents:/torrents
+services:
+    frontend:
+        image: wakemaster39/seedbox:frontend
+        restart: always
+        networks:
+            - main
+        ports:
+            - "1500:80"
+            - "443:443"
+        volumes:
+            - config:/config
+        env_file:
+            - config
