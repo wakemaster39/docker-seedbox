@@ -22,6 +22,10 @@ services:
             - config:/config
         env_file:
             - config
+        depends_on:
+            - private_rtorrent
+        links:
+            - private_rtorrent
 
     private_rtorrent:
         image: wakemaster39/seedbox:private_rtorrent
