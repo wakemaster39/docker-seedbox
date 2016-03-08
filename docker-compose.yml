@@ -13,7 +13,7 @@ volumes:
 
 services:
       rtorrent:
-        image: wakemaster39/seedbox:rtorrent
+        image: wakemaster39/seedbox:private_rtorrent
         restart: always
         networks:
             - main

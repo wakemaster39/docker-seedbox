@@ -25,6 +25,6 @@ done
 docker build -t wakemaster39/seedbox:base --pull DockerFiles/base
 
 docker build -t wakemaster39/seedbox:frontend $ARGS DockerFiles/frontend &
-docker build -t wakemaster39/seedbox:rtorrent $ARGS DockerFiles/rtorrent  &
+docker build -t wakemaster39/seedbox:private_rtorrent $ARGS DockerFiles/private_rtorrent  &
 
 wait
