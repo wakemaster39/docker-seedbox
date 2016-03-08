@@ -12,7 +12,7 @@ volumes:
 
 
 services:
-      rtorrent:
+      private_rtorrent:
         image: wakemaster39/seedbox:private_rtorrent
         restart: always
         networks:
