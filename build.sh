@@ -22,9 +22,9 @@ while getopts ":nq" opt; do
     esac
 done
 
-docker build -t wakemaster39/seedbox:base --pull Dockerfiles/base
+docker build -t wakemaster39/seedbox:base --pull DockerFiles/base
 
-docker build -t wakemaster39/seedbox:frontend $ARGS Dockerfiles/frontend &
-docker build -t wakemaster39/seedbox:rtorrent $ARGS Dockerfiles/rtorrent  &
+docker build -t wakemaster39/seedbox:frontend $ARGS DockerFiles/frontend &
+docker build -t wakemaster39/seedbox:rtorrent $ARGS DockerFiles/rtorrent  &
 
 wait
