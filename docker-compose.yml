@@ -1,4 +1,3 @@
-
 version: '2'
 
 networks:
@@ -10,20 +9,6 @@ volumes:
     torrents:
         driver: local
 
-
-services:
-      private_rtorrent:
-        image: wakemaster39/seedbox:private_rtorrent
-        restart: always
-        networks:
-            - main
-        ports:
-            - "49161:49161"
-            - "49161:49161/udp"
-            - "6881:6881/udp"
-        volumes:
-            - config:/config
-            - torrents:/torrents
 services:
     frontend:
         image: wakemaster39/seedbox:frontend
@@ -37,3 +22,16 @@ services:
             - config:/config
         env_file:
             - config
+
+    private_rtorrent:
+        image: wakemaster39/seedbox:private_rtorrent
+        restart: always
+        networks:
+            - main
+        ports:
+            - "49161:49161"
+            - "49161:49161/udp"
+            - "6881:6881/udp"
+        volumes:
+            - config:/config
+            - torrents:/torrents
